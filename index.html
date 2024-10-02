@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Інструмент візуалізації даних</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body class="light-theme">
+    <header>
+        <h1>Інструмент візуалізації даних</h1>
+        <button id="themeToggle">Змінити тему</button>
+    </header>
+    <main>
+        <section class="file-upload">
+            <h2>Завантаження даних</h2>
+            <div id="dropZone" class="drop-zone">
+                <p>Перетягніть файл сюди або натисніть для вибору</p>
+                <input type="file" id="fileInput" accept=".csv,.json,.xls,.xlsx">
+            </div>
+        </section>
+        <section class="chart-type-selection">
+            <h2>Вибір типу графіка</h2>
+            <button id="lineChart">Лінійний графік</button>
+            <button id="barChart">Стовпчикова діаграма</button>
+            <button id="pieChart">Кругова діаграма</button>
+        </section>
+        <section class="chart-area">
+            <h2>Область графіка</h2>
+            <canvas id="chartCanvas"></canvas>
+        </section>
+        <section class="customization-panel">
+            <h2>Налаштування графіка</h2>
+            <div class="label-settings">
+                <div>
+                    <label for="chartTitle">Назва графіка:</label>
+                    <input type="text" id="chartTitle">
+                </div>
+                <div>
+                    <label for="xAxisLabel">Підпис осі X:</label>
+                    <input type="text" id="xAxisLabel">
+                </div>
+                <div>
+                    <label for="yAxisLabel">Підпис осі Y:</label>
+                    <input type="text" id="yAxisLabel">
+                </div>
+            </div>
+            <div class="color-settings">
+                <div id="lineColorSettings">
+                    <label for="lineColor">Колір лінії:</label>
+                    <input type="color" id="lineColor">
+                </div>
+                <div id="barColorSettings">
+                    <label for="barColor">Колір стовпчиків:</label>
+                    <input type="color" id="barColor">
+                </div>
+                <div id="pieColorSettings">
+                    <label>Кольори кругової діаграми:</label>
+                    <div id="pieColors"></div>
+                </div>
+                <div>
+                    <label for="backgroundColor">Колір фону:</label>
+                    <input type="color" id="backgroundColor">
+                </div>
+                <div>
+                    <label for="textColor">Колір тексту:</label>
+                    <input type="color" id="textColor">
+                </div>
+            </div>
+        </section>
+        <section class="export-section">
+            <h2>Експорт</h2>
+            <button id="exportPNG">Експорт у PNG</button>
+            <button id="exportSVG">Експорт у SVG</button>
+            <button id="printChart">Друк</button>
+        </section>
+    </main>
+    <script type="module" src="scripts/main.js"></script>
+</body>
+
+</html>

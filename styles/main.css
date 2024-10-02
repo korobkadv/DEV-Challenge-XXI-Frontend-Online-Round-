@@ -1,0 +1,196 @@
+/* styles/main.css */
+
+:root {
+    /* Світла тема */
+    --light-background: #ffffff;
+    --light-text: #000000;
+    --light-primary: #003366;
+    --light-secondary: #0056A2;
+    --light-accent: #FFD700;
+    --light-border: #cccccc;
+
+    /* Темна тема */
+    --dark-background: #1a1a1a;
+    --dark-text: #ffffff;
+    --dark-primary: #4a90e2;
+    --dark-secondary: #63a4ff;
+    --dark-accent: #ffd700;
+    --dark-border: #444444;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.light-theme {
+    background-color: var(--light-background);
+    color: var(--light-text);
+}
+
+body.dark-theme {
+    background-color: var(--dark-background);
+    color: var(--dark-text);
+}
+
+header {
+    background-color: var(--light-primary);
+    color: var(--light-background);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body.dark-theme header {
+    background-color: var(--dark-primary);
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1,
+h2 {
+    margin-bottom: 1rem;
+}
+
+button {
+    background-color: var(--light-secondary);
+    color: var(--light-background);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+body.dark-theme button {
+    background-color: var(--dark-secondary);
+    color: var(--dark-text);
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.file-upload {
+    margin-bottom: 20px;
+}
+
+.drop-zone {
+    border: 2px dashed var(--light-border);
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+body.dark-theme .drop-zone {
+    border-color: var(--dark-border);
+}
+
+.drop-zone.dragover {
+    background-color: var(--light-accent);
+    opacity: 0.6;
+}
+
+body.dark-theme .drop-zone.dragover {
+    background-color: var(--dark-accent);
+}
+
+.chart-type-selection {
+    margin-bottom: 20px;
+}
+
+.chart-type-selection button {
+    margin-right: 10px;
+}
+
+.chart-area {
+    border: 1px solid var(--light-border);
+    min-height: 400px;
+    margin-bottom: 20px;
+}
+
+body.dark-theme .chart-area {
+    border-color: var(--dark-border);
+}
+
+.customization-panel {
+    margin-bottom: 20px;
+}
+
+.label-settings,
+.color-settings {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="color"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid var(--light-border);
+}
+
+body.dark-theme input[type="text"],
+body.dark-theme input[type="color"] {
+    background-color: var(--dark-background);
+    color: var(--dark-text);
+    border-color: var(--dark-border);
+}
+
+#pieColors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+#pieColors input[type="color"] {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: none;
+}
+
+.export-section {
+    margin-bottom: 50px;
+}
+
+@media (max-width: 768px) {
+
+    .label-settings,
+    .color-settings {
+        grid-template-columns: 1fr;
+    }
+
+    .export-section {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+#themeToggle {
+    background-color: var(--light-accent);
+    color: var(--light-text);
+}
+
+body.dark-theme #themeToggle {
+    background-color: var(--dark-accent);
+    color: var(--dark-text);
+}
