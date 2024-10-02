@@ -1,4 +1,3 @@
-// main.js
 import { parseCSV, parseJSON, parseExcel } from "./fileParser.js";
 import { drawLineChart, drawBarChart, drawPieChart } from "./chartDrawer.js";
 
